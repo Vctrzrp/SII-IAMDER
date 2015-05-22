@@ -35,7 +35,7 @@ require ("../controlador/con_session.php");
                     <!-- TITULO EN LA PESTAÑA-->
                     <span class="date"><span class="month">Equipo</span> <!--<span class="day">14</span><span class="year">, 2014</span></span>-->
                   </div>
-                  <form id="form1" name="form1" method="post" action="../controlador/con_registrarequipo.php">
+                  <form id="form1" name="form1" method="post" action="../controlador/con_registrar_equipo.php">
   <div align="center">
     <h2>Rellene el formulario para registrar sus datos en el sistema</h2>
     <p>&nbsp;</p>
@@ -62,11 +62,12 @@ require ("../controlador/con_session.php");
     <td>&nbsp;</td>
     <td><div align="right"><strong>Disciplina del equipo:&nbsp;</strong></div></td>
     <td><select name="disciplina" id="disciplina" required>
-      <option value="">Seleccione</option>
-      <option value="1">Béisbol</option>
-      <option value="2">Fútbol</option>
-      <option value="3">Softball</option>
-
+          <option value="">Seleccione</option>
+          <option value="1">F&uacute;tbol</option>
+          <option value="2">B&eacute;isbol</option>
+          <option value="3">Softball</option>
+          <option value="4">Baloncesto</option>
+          <option value="5">Tenis de mesa</option>
      </select></td>
   </tr>
   <tr>

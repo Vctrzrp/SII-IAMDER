@@ -37,7 +37,7 @@ require ("../controlador/con_session.php");
 					<span class="date"><span class="month">Atletas</span>
 				</div>
                 <div align="top">
-                	<p align="right">Exportar lista en PDF</p>
+                	<p align="right"><a href="generar.php?a=listado_atletas.pdf" target="_blank">Exportar lista en PDF</a></p>
 					<?php
 						require ("../controlador/con_listar_atletas.php");
 					?>

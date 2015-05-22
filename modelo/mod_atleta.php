@@ -19,7 +19,7 @@ class atleta {
 
 /* ---------------------------*/
 	//Agregar
-	public function agregar ($atl_ced, $atl_nom, $atl_ape, $atl_tel, $atl_sex, $atl_nac, $atl_dir, $atl_est, $atl_pes, $atl_cam, $alt_pan, $atl_bec, $atl_fe, $dis_cod, $equ_cod, $rep_cod, $pgconn){
+	public function agregar ($atl_ced, $atl_nom, $atl_ape, $atl_tel, $atl_sex, $atl_nac, $atl_dir, $atl_est, $atl_pes, $atl_cam, $atl_pan, $atl_bec, $atl_fe, $dis_cod, $equ_cod, $rep_cod, $pgconn){
 		$query = "INSERT INTO atleta (atl_ced, atl_nom, atl_ape, atl_tel, atl_sex, atl_nac, atl_dir, atl_est, atl_pes, atl_cam, atl_pan, atl_bec, atl_fe, dis_cod, equ_cod, rep_cod)
 		VALUES ('$atl_ced', '$atl_nom', '$atl_ape', '$atl_tel', '$atl_sex', '$atl_nac', '$atl_dir', '$atl_est', '$atl_pes', '$atl_cam', '$atl_pan', '$atl_bec', '$atl_fe', '$dis_cod', '$equ_cod', '$rep_cod')";
 		$consulta = pg_query($pgconn, $query) or die("Error al agregar: ".pg_last_error());

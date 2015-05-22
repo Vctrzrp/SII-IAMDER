@@ -23,7 +23,7 @@ require("../modelo/mod_atleta.php");
 </style>
 
 <!-- Imprimo la tabla -->
-<table border="2" bgcolor="#dcdcdc" align="center" id="lista_atletas" >
+<table border="0" bgcolor="#dcdcdc" align="center" id="lista_atletas" width="80%" >
 	<thead >
 		<tr bgcolor="#000000" >
 			<th align="center" bgcolor="#eeece1"><span class="style3">Cédula</span></th>

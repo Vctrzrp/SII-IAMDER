@@ -46,7 +46,7 @@ require ("../controlador/con_session.php");
 							<h3> <strong>Ingrese los siguientes datos:</strong></h3>
 					  </header>
 <?php
-$emp_login=$_SESSION['emp_log'];
+$emp_ced=$_SESSION['emp_ced'];
 if($_SESSION['tipemp_cod']=='1') 
 	{ ?>
 
@@ -57,7 +57,7 @@ if($_SESSION['tipemp_cod']=='1')
                              		</tr>
                              		<tr>
                              		<!--<td align="right"><strong>Login:&nbsp;</strong></td>-->
-                             		<td><input  type="hidden" name="login" id="login" placeholder=<?php echo $emp_login;?> value="<?php echo $emp_login;?>"></td>
+                             		<td><input  type="hidden" name="login" id="login" placeholder=<?php echo $emp_ced;?> value="<?php echo $emp_ced;?>"></td>
                              		</tr>
 									<tr>
                             		<td align="right"><strong>Contraseña:&nbsp;</strong></td>

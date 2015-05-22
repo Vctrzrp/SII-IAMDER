@@ -142,8 +142,8 @@ $cedula = $_GET['atl_ced'];
                     <td><div align="right"><strong>Disciplina:&nbsp;</strong></div></td>
                     <td><select name="disciplina" id="disciplina" required>
                       <option value="">Seleccione</option>
-                      <option value="1">B&eacute;isbol</option>
-                      <option value="2">F&uacute;tbol</option>
+                      <option value="1">F&uacute;tbol</option>
+                      <option value="2">B&eacute;isbol</option>
                       <option value="3">Softball</option>
                       <option value="4">Baloncesto</option>
                       <option value="5">Tenis de mesa</option>

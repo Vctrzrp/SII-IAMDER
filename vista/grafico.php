@@ -55,16 +55,16 @@ require ("../controlador/con_session.php");
 						</div></article>
 				<div id="chartContainer"><script type="text/javascript"> FusionCharts.ready(function(){
       var revenueChart = new FusionCharts({
-        "type": "column3D",
+        "type": "doughnut3D",
         "renderAt": "chartContainer",
         "width": "500",
         "height": "300",
         "dataFormat": "json",
         "dataSource": {
           "chart": {
-              "caption": "Empleados registados",
+              "caption": "Atletas registados",
               "subCaption": " ",
-              "xAxisName": "Gestor",
+              "xAxisName": "Cantidad",
               "yAxisName": "",
               "theme": "fint"
            },

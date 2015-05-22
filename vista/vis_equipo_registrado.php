@@ -4,7 +4,7 @@ require ("../controlador/con_session.php");
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Empleados</title>
+		<title>Equipos</title>
 		<link rel="icon" href="images/logot.png" type="image" sizes="16x16">
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
@@ -22,33 +22,29 @@ require ("../controlador/con_session.php");
 	</head>
 	<body class="left-sidebar">
 		<!-- Wrapper -->
-		<div id="wrapper">
-			<!-- Content -->
-			<div id="content">
-			<div class="inner">
-				<!-- Post -->
-				<article class="box post post-excerpt">
-				<header>
-					<h2><a href="#">Lista de empleados registrados</a></h2>
-					<hr>
-				</header>
-				<div class="info">
-					<!-- TITULO EN LA PESTAÑA-->
-					<span class="date"><span class="month">Empleados</span>
-				</div>
-                <div align="top">
-					<p align="right"> <a href="generar.php?a=listado_empleados.pdf" target="_blank"> Exportar lista en PDF</a></p>
-					<?php
-						require ("../controlador/con_listar_empleados.php");
-					?>
-                </div>
-				</article>
+			<div id="wrapper">
+				<!-- Content -->
+					<div id="content">
+						<div class="inner">
+							<!-- Post -->
+								<article class="box post post-excerpt">
+									<header>
+										<h2><a href="">Registrado</a></h2>
+										<hr>
+									</header>
+									<div class="info">
+										<!-- TITULO EN LA PESTAÑA-->
+										<span class="date"><span class="month">Equipo</span>
+								</article>
+								<?php 
+								require ("../controlador/con_listar_equipo_registrado.php"); 
+								?>
+						</div>
+					</div>
+<?php
+require ("menu.php");
+?>
+					</div>
 			</div>
-			</div>
-		<!-- Sidebar -->
-		<?php
-			require ("menu.php");
-		?>
-		</div>
 	</body>
 </html>
