@@ -1,5 +1,5 @@
 <?php
-require ("../controlador/con_session.php");
+require ("../controlador/sesion/con_session.php");
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -39,7 +39,7 @@ require ("../controlador/con_session.php");
                 <div align="top">
                 	<p align="right"><a href="generar.php?a=listado_atletas.pdf" target="_blank">Exportar lista en PDF</a></p>
 					<?php
-						require ("../controlador/con_listar_atletas.php");
+						require ("../controlador/atleta/con_listar_atletas.php");
 					?>
 				</div>
 				</article>

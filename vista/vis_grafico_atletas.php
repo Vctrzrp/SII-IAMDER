@@ -1,5 +1,5 @@
 <?php
-require ("../controlador/con_session.php");
+require ("../controlador/sesion/con_session.php");
 ?>
 <!DOCTYPE HTML>
 
@@ -32,7 +32,7 @@ require ("../controlador/con_session.php");
 									<header>
 										<h2><a href="#">Estadísticas</a></h2>
 										<hr>
-										<div align="right"><a href="../controlador/bdexcel_bitacora.php">Exportar Data</a></div>
+										<!--<div align="right"><a href="../controlador/con_excel.php">Exportar Data</a></div>-->
 									</header>
 									<div class="info">
 										<span class="date"><span class="month">Atletas</span>
@@ -42,8 +42,7 @@ require ("../controlador/con_session.php");
 </span></div></article>
 <div>    
 <?php 
-	require ("../controlador/con_grafico.php");
-	//php echo "En estos momentos existen: ".$resultado." casos registrados en sistema";
+	require ("../controlador/grafico/con_grafico.php");
 ?>
 </div>
 
@@ -57,18 +56,33 @@ require ("../controlador/con_session.php");
         "dataSource": {
           "chart": {
               "caption": "Atletas registrados",
-              "subCaption": " ",
-              "xAxisName": "",
-              "yAxisName": "Cantidad de registros",
+              "subCaption": "Agrupados por sexo",
               "theme": ""
            },
-          "data": [
-
-            <?php atletas();?>
-           ]
+          "data": [<?php atletas_sexo();?>]
         }
     });
     revenueChart.render();
+})</script>
+</div>
+<hr>
+<div id="chartContainer2"><script type="text/javascript"> FusionCharts.ready(function(){
+      var revenueChart2 = new FusionCharts({
+        "type": "doughnut3D",
+        "renderAt": "chartContainer2",
+        "width": "700",
+        "height": "321",
+        "dataFormat": "json",
+        "dataSource": {
+          "chart": {
+              "caption": "Atletas registrados",
+              "subCaption": "Agrupados por disciplina",
+              "theme": ""
+           },
+          "data": [<?php atletas_disciplina();?>]
+        }
+    });
+    revenueChart2.render();
 })</script>
 </div>
 						</div>

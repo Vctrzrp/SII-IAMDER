@@ -5,7 +5,6 @@ class empleado{ //Abro clase empleado
 	private $emp_ape;
 	private $emp_cor;
 	private $emp_tel;
-//	private $emp_log;
 	private $emp_cla;
 	private $emp_fe;
 	private $tipemp_cod;
@@ -69,7 +68,7 @@ class empleado{ //Abro clase empleado
 //Función lista
 		public function lista($pgconn)
 		{
-			$query= "SELECT empleado.*, tipo_empleado.tipemp_des, estatu.est_des FROM empleado, tipo_empleado, estatu WHERE empleado.tipemp_cod = tipo_empleado.tipemp_cod AND empleado.est_cod = estatu.est_cod ORDER BY emp_ced ASC";
+			$query= "SELECT empleado.*, tipo_empleado.tipemp_des, estatu.est_des, disciplina.dis_des FROM empleado, tipo_empleado, estatu, disciplina WHERE empleado.tipemp_cod = tipo_empleado.tipemp_cod AND empleado.est_cod = estatu.est_cod AND empleado.dis_cod = disciplina.dis_cod ORDER BY empleado.emp_ced::integer ASC";
 			$consulta= pg_query($pgconn, $query) or die ("Error al listar: ".pg_last_error($consulta));
 		if($consulta)
 			{//Abro if
@@ -77,6 +76,17 @@ class empleado{ //Abro clase empleado
 			}//Cierro if
 		}//Cierro función
 	
+//Función modificar
+		public function modificar($emp_ced, $emp_cor, $emp_tel, $tipemp_cod, $est_cod, $dis_cod, $pgconn)
+		{
+			$query= "UPDATE empleado SET emp_cor='$emp_cor', emp_tel='$emp_tel', tipemp_cod = '$tipemp_cod', est_cod = '$est_cod' WHERE emp_ced = '$emp_ced' ";
+			$consulta= pg_query($pgconn, $query) or die ("Error al modificar: ".pg_last_error($consulta));
+		if($consulta)
+			{//Abro if
+			return ($consulta);
+			}//Cierro if
+		}//Cierro función
+
 //Función mostrar	
 	public function mostrar($pgconn)
 	{

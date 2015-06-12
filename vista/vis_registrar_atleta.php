@@ -1,5 +1,5 @@
 <?php
-require ("../controlador/con_session.php");
+require ("../controlador/sesion/con_session.php");
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -39,7 +39,7 @@ require ("../controlador/con_session.php");
                                         </ul>
                                     </div>
                                 <h4>Ingrese c&eacute;dula del atleta a registrar</h4>
-        <form action="../controlador/con_registrar_cedula_atleta.php" method="POST">
+        <form action="../controlador/atleta/con_registrar_cedula_atleta.php" method="POST">
                 <table width="80%" border="1">
   <tr>
     <td width="176">&nbsp;</td>

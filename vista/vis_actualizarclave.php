@@ -1,5 +1,5 @@
 <?php
-require ("../controlador/con_session.php");
+require ("../controlador/sesion/con_session.php");
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -50,14 +50,14 @@ $emp_ced=$_SESSION['emp_ced'];
 if($_SESSION['tipemp_cod']=='1') 
 	{ ?>
 
-                            	<form method="post" action="../controlador/con_actualizar_clave.php" >
+                            	<form method="post" action="../controlador/usuario/con_actualizar_clave.php" >
                              	<table align="center"border="2">
                              		<tr>
                              		<td align="right"><strong>&nbsp;</strong>
                              		</tr>
                              		<tr>
                              		<!--<td align="right"><strong>Login:&nbsp;</strong></td>-->
-                             		<td><input  type="hidden" name="login" id="login" placeholder=<?php echo $emp_ced;?> value="<?php echo $emp_ced;?>"></td>
+                             		<td><input  type="hidden" name="cedula" id="cedula" placeholder=<?php echo $emp_ced;?> value="<?php echo $emp_ced;?>"></td>
                              		</tr>
 									<tr>
                             		<td align="right"><strong>Contraseña:&nbsp;</strong></td>

@@ -1,5 +1,5 @@
 <?php
-require ("../controlador/con_session.php");
+require ("../controlador/sesion/con_session.php");
 $cedula = $_GET['atl_ced'];
 ?>
 <!DOCTYPE HTML>
@@ -35,9 +35,9 @@ $cedula = $_GET['atl_ced'];
           </header>
         <div class="info">
           <!-- TITULO EN LA PESTAÑA-->
-          <span class="date"><span class="month">Atleta</span> <!--<span class="day">14</span><span class="year">, 2014</span></span>-->
+          <span class="date"><span class="month">Atleta</span>
         </div>
-      <form id="form1" name="form1" method="post" action="../controlador/con_registrar_atleta.php">
+      <form id="form1" name="form1" method="post" action="../controlador/atleta/con_registrar_atleta.php">
         <div align="center">
           <h2 align="left">Rellene el formulario para registrar sus datos en el sistema</h2>
           <p>&nbsp;</p>
@@ -47,19 +47,19 @@ $cedula = $_GET['atl_ced'];
                     <td width="466" scope="col"><input type="text" name="cedula" id="cedula" readonly="true" value="<?php echo $cedula; ?>" title="Ingrese cédula del atleta" pattern="^[0-9]{6,8}$" required/></td>
                   </tr>
                   <tr>
-                    <td width="298" scope="col"><div align="right"><strong>(*) Nombre:&nbsp;</strong></div></td>
+                    <td width="298" scope="col"><div align="right"><strong>Nombre:&nbsp;</strong></div></td>
                     <td width="466" scope="col"><input type="text" name="nombre" id="nombre" placeholder="Nombre" title="Ingrese nombre del atleta" required /></td>
                   </tr>
                   <tr>
-                    <td><div align="right"><strong>(*) Apellido:&nbsp;</strong></div></td>
+                    <td><div align="right"><strong>Apellido:&nbsp;</strong></div></td>
                     <td><input type="text" name="apellido" id="apellido" placeholder="Apellido" title="Ingrese apellido del atleta" required /></td>
                   </tr>
                   <tr>
-                    <td><div align="right"><strong>(*) Tel&eacute;fono:&nbsp;</strong></div></td>
+                    <td><div align="right"><strong>Tel&eacute;fono:&nbsp;</strong></div></td>
                     <td><input type="text" name="telefono" id="telefono" placeholder="2127813002" title="Ingrese un número telefónico" pattern="^[0-9]{7,10}$" required/></td>
                   </tr>
                   <tr>
-                    <td><div align="right"><strong>(*) Sexo:&nbsp;</strong></div></td>
+                    <td><div align="right"><strong>Sexo:&nbsp;</strong></div></td>
                     <td><select name="sexo" id="sexo" required>
                       <option value="">Seleccione</option>
                       <option value="Femenino">Femenino</option>
@@ -67,11 +67,11 @@ $cedula = $_GET['atl_ced'];
                      </select></td>
                   </tr>
                   <tr>
-                    <td><div align="right"><strong>(*) Fecha de nacimiento:&nbsp;</strong></td>
+                    <td><div align="right"><strong>Fecha de nacimiento:&nbsp;</strong></td>
                     <td><input type="date" name="fechanacimiento" id="fechanacimiento"/></td>
                   </tr>  
                   <tr>
-                    <td><div align="right"><strong>(*) Direcci&oacute;n:&nbsp;</strong></div></td>
+                    <td><div align="right"><strong>Direcci&oacute;n:&nbsp;</strong></div></td>
                     <td><input type="text" name="direccion" id="direccion" placeholder="Gran avenida..." title="Ingrese dirección del atleta" required/></td>
                   </tr>
                   <!-- --REPRESENTANTE--
@@ -128,22 +128,22 @@ $cedula = $_GET['atl_ced'];
                   </tr>
                   <tr>
                   <tr>
-                    <td><div align="right"><strong>(*) Beca:&nbsp;</strong></div></td>
+                    <td><div align="right"><strong>Beca:&nbsp;</strong></div></td>
                     <td><select name="beca" id="beca" required>
                       <option value="">Seleccione</option>
                       <option value="Activa">Activa</option>
                       <option value="Inactiva">Inactiva</option>
                      </select></td>
-                  </tr>
-                    <td><div align="right"><strong>(*) Fecha de registro:&nbsp;</strong></div></td>
+                  <!--</tr>
+                    <td><div align="right"><strong>Fecha de registro:&nbsp;</strong></div></td>
                     <td><input type="text" name="fechacreacion" id="fechacreacion" value="<?php echo date('Y-m-d'); ?>" readonly="true"/></td>
-                  </tr>
+                  </tr>-->
                   <tr>
                     <td><div align="right"><strong>Disciplina:&nbsp;</strong></div></td>
                     <td><select name="disciplina" id="disciplina" required>
                       <option value="">Seleccione</option>
-                      <option value="1">F&uacute;tbol</option>
-                      <option value="2">B&eacute;isbol</option>
+                      <option value="1">Fútbol</option>
+                      <option value="2">Béisbol</option>
                       <option value="3">Softball</option>
                       <option value="4">Baloncesto</option>
                       <option value="5">Tenis de mesa</option>
@@ -151,7 +151,7 @@ $cedula = $_GET['atl_ced'];
                   </tr>
                   <tr>      
                   <tr>
-                    <td colspan="4" align="right">(*) Campos obligatorios</td>
+                    <td colspan="4" align="right">Campos obligatorios</td>
                   </tr>
                   <tr>
                     <td colspan="4" align="center"><input type="submit" name="enviar" id="enviar" value="Enviar" />

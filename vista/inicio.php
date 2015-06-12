@@ -41,7 +41,7 @@
 							<h3> <strong align="left" >Inicie sesión:</strong></h3>
 							<p></p>
 						</header>
-                    <form method="post" action="../controlador/con_login.php" >
+                    <form method="post" action="../controlador/sesion/con_login.php" >
                        	<table align="center"border="2">
                        		<tr>
                           		<td>CÉDULA:</td>
@@ -67,7 +67,7 @@
 			<a id="logo" al href="inicio.php" ><img src="images/logot.png"width='140' height='204'/></a>
 				<hr>
 					<ul id="copyright">
-						<li>&copy; Autores:<br>Mar&iacute;a Lombano<br>Carlos Benitez<br>Carlos Garc&iacute;a<br>Victor Zerpa<!--<a href="http://html5up.net">HTML5 UP</a></li>-->
+						<li>&copy; Autores:<br>Mar&iacute;a Lombano<br>Carlos Benitez<br>Carlos Garc&iacute;a<br>Victor Zerpa
 					</ul>
 		</div>
 	</div>

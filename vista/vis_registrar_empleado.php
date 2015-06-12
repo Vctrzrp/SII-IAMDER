@@ -1,5 +1,5 @@
 <?php
-require ("../controlador/con_session.php");
+require ("../controlador/sesion/con_session.php");
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -38,8 +38,8 @@ require ("../controlador/con_session.php");
 										<ul class="stats">
 										</ul>
 									</div>
-								<h4>Ingrese datos del empleado a registrar</h4>
-  		<form action="../controlador/con_registrar_cedula_empleado.php" method="POST">
+								<h4>Ingrese la cédula del empleado a registrar</h4>
+  		<form action="../controlador/empleado/con_registrar_cedula_empleado.php" method="POST">
 				<table width="80%" border="1">
 					<tr>
 				        <th width="41" scope="col">&nbsp;</th>

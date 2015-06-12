@@ -1,5 +1,5 @@
 <?php
-require ("../controlador/con_session.php");
+require ("../controlador/sesion/con_session.php");
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -37,7 +37,7 @@ require ("../controlador/con_session.php");
 										<span class="date"><span class="month">Atleta</span>
 								</article>
 								<?php 
-								require ("../controlador/con_listar_atleta_registrado.php"); 
+								require ("../controlador/atleta/con_listar_atleta_registrado.php"); 
 								?>
 						</div>
 					</div>

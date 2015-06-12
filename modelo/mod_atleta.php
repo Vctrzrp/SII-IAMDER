@@ -28,8 +28,8 @@ class atleta {
 
 /* ---------------------------*/
 	//Modificar
-	public function modificar ($atl_cod, $atl_ced, $atl_nom, $atl_ape, $atl_tel, $atl_sex, $atl_nac, $atl_dir, $atl_est, $atl_pes, $atl_cam, $atl_pan, $atl_bec, $atl_fe, $pgconn){
-		$query = "UPDATE atleta SET atl_ced ='$atl_ced', atl_nom = '$atl_nom', atl_ape = '$atl_ape', atl_tel = '$atl_tel', atl_sex = '$atl_sex', alt_nac = '$atl_nac', atl_dir = '$atl_dir', atl_est = '$atl_est', atl_pes = '$atl_pes', atl_cam = '$atl_cam', atl_pan = '$atl_pan', atl_bec = '$atl_bec', atl_fe = '$atl_fe' WHERE atl_cod = '$atl_cod'";
+	public function modificar ($atl_ced, $atl_tel, $atl_sex, $atl_est, $atl_pes, $atl_cam, $atl_pan, $atl_bec, $dis_cod, $equ_cod, $pgconn){
+		$query = "UPDATE atleta SET atl_ced ='$atl_ced', atl_tel = '$atl_tel', atl_sex = '$atl_sex', atl_est = '$atl_est', atl_pes = '$atl_pes', atl_cam = '$atl_cam', atl_pan = '$atl_pan', atl_bec = '$atl_bec', dis_cod='$dis_cod', equ_cod = '$equ_cod' WHERE atl_ced = '$atl_ced'";
 		$consulta = pg_query($pgconn, $query) or die("Consulta err&oacute;nea al modificar: ".pg_last_error());
 		if ($consulta) {
            $mensaje='Modificaci&oacute;n realizada';
@@ -53,7 +53,8 @@ class atleta {
 //Función buscar
 		public function buscar($atl_ced, $pgconn)
 		{//Abro función buscar
-		$query= "SELECT * FROM atleta WHERE atl_ced = '$atl_ced'";
+		$query= "SELECT atleta.*, equipo.equ_des, disciplina.dis_des FROM atleta, equipo, disciplina WHERE atl_ced = '$atl_ced' AND atleta.equ_cod = equipo.equ_cod AND atleta.dis_cod = disciplina.dis_cod
+";
 		$consulta= pg_query($pgconn, $query) or die ("Error al buscar: ".pg_last_error($pgconn));
 		if($consulta)
 		{//Abro if
@@ -64,7 +65,7 @@ class atleta {
 /* ---------------------------*/
 	//Listar
 	public function listar ($pgconn){
-		$query = "SELECT atleta.atl_ced, atleta.atl_nom , atleta.atl_ape, disciplina.dis_des FROM atleta, disciplina WHERE atleta.dis_cod = disciplina.dis_cod ORDER BY atl_ced ASC";
+		$query = "SELECT atleta.atl_ced, atleta.atl_nom , atleta.atl_ape, disciplina.dis_des FROM atleta, disciplina WHERE atleta.dis_cod = disciplina.dis_cod ORDER BY atl_ced::integer ASC";
 		$consulta = pg_query($pgconn, $query) or die("Error al listar ".pg_last_error());
 		return $consulta;
 	}//Cierro función listar

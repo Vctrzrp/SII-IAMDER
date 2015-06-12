@@ -3,6 +3,9 @@ class equipo{
 	private $equ_des;
 	private $equ_repced;
 	private $equ_repnom;
+	private $equ_can;
+	private $equ_cor;
+	private $equ_tel;
 	private $equ_vic;
 	private $equ_der;
 	private $equ_emp;
@@ -11,17 +14,17 @@ class equipo{
 
 /* ---------------------------*/
 	//Agregar
-	public function agregar($equ_des,$equ_repced, $equ_repnom, $equ_vic, $equ_der, $equ_emp, $equ_jue, $dis_cod, $pgconn){
-		$query = "INSERT INTO equipo (equ_des, equ_repced, equ_repnom, equ_vic, equ_der, equ_emp, equ_jue, dis_cod)
-		VALUES ('$equ_des','$equ_repced','$equ_repnom', '$equ_vic', '$equ_der', '$equ_emp', '$equ_jue', '$dis_cod')";
+	public function agregar($equ_des,$equ_repced, $equ_repnom, $equ_can, $equ_cor, $equ_tel, $equ_vic, $equ_der, $equ_emp, $equ_jue, $dis_cod, $pgconn){
+		$query = "INSERT INTO equipo (equ_des, equ_repced, equ_repnom, equ_can, equ_cor, equ_tel, equ_vic, equ_der, equ_emp, equ_jue, dis_cod)
+		VALUES ('$equ_des','$equ_repced','$equ_repnom', '$equ_can', '$equ_cor', '$equ_tel', '$equ_vic', '$equ_der', '$equ_emp', '$equ_jue', '$dis_cod')";
 		$consulta = pg_query($pgconn, $query) or die ("Error al agregar: ".pg_last_error());
 		return $consulta;
 	}//Cierra función agregar
 
 /* ---------------------------*/
 	//Modificar
-	public function modificar($equ_cod, $equ_des, $equ_repced, $equ_repnom, $equ_vic, $equ_der, $equ_emp, $equ_jue, $pgconn){
-		$query = "UPDATE equipo SET equ_des = '$equ_des', equ_vic = '$equ_vic', equ_der = '$equ_der', equ_emp = '$equ_emp', equ_jue = '$equ_jue' WHERE equ_cod = '$equ_cod'";
+	public function modificar($equ_cod, $equ_des, $equ_repced, $equ_repnom, $equ_can, $equ_cor, $equ_tel, $equ_vic, $equ_der, $equ_emp, $equ_jue, $pgconn){
+		$query = "UPDATE equipo SET equ_des = '$equ_des', equ_can = '$equ_can', equ_cor = '$equ_cor', equ_tel = '$equ_tel', equ_vic = '$equ_vic', equ_der = '$equ_der', equ_emp = '$equ_emp', equ_jue = '$equ_jue' WHERE equ_cod = '$equ_cod'";
 		$consulta = pg_query($pgconn, $query) or die ("Consulta err&oacute;nea al modificar: ".pg_last_error()) ;
 		return $consulta;
 	}//Cierro función modificar
@@ -37,7 +40,7 @@ class equipo{
 /* ---------------------------*/
 	//Listar
 	public function listar ($pgconn){
-		$query = "SELECT equipo.equ_des, equipo.equ_repnom , disciplina.dis_des FROM equipo, disciplina WHERE equipo.dis_cod = disciplina.dis_cod";
+		$query = "SELECT equipo.equ_des, equipo.equ_repnom , disciplina.dis_des FROM equipo, disciplina WHERE (equ_cod) != (1) AND equipo.dis_cod = disciplina.dis_cod";
 		$consulta = pg_query($pgconn, $query) or die("Error al listar: ".pg_last_error());
 		return $consulta;
 	}//Cierro función listar

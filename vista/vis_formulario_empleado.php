@@ -1,5 +1,5 @@
 <?php
-require ("../controlador/con_session.php");
+require ("../controlador/sesion/con_session.php");
 $cedula = $_GET['emp_ced'];
 ?>
 <!DOCTYPE HTML>
@@ -35,9 +35,9 @@ $cedula = $_GET['emp_ced'];
             </header>            
           <div class="info">
             <!-- TITULO EN LA PESTAÑA-->
-            <span class="date"><span class="month">Empleado</span> <!--<span class="day">14</span><span class="year">, 2014</span></span>-->
+            <span class="date"><span class="month">Empleado</span>
           </div>
-        <form id="form1" name="form1" method="post" action="../controlador/con_registrar_empleado.php">
+        <form id="form1" name="form1" method="post" action="../controlador/empleado/con_registrar_empleado.php">
           <div align="center">
             <h2 align="left">Ingrese los siguientes datos para el registro del empleado</h2>
             <p>&nbsp;</p>
@@ -84,12 +84,12 @@ $cedula = $_GET['emp_ced'];
                   <td><input type="password" name="conficlave" id="conficlave" placeholder="*******" title="Debe tener letras y números" pattern="^[a-zA-Z0-9]{4,10}$" required/></td>
                   <td>&nbsp;</td>
                 </tr>
-                <tr>
+                <!--<tr>
                   <td>&nbsp;</td>
                   <td><div align="right"><strong>Fecha de registro:&nbsp;</strong></div></td>
                   <td><input type="text" name="fechacreacion" id="fechacreacion" readonly="true" value="<?php echo date('Y-m-d'); ?>" /></td>
                   <td>&nbsp;</td>
-                </tr>
+                </tr>-->
                 <tr>
                   <td>&nbsp;</td>
                   <td><div align="right"><strong>Perfil:&nbsp;</strong></div></td>

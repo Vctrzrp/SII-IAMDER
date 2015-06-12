@@ -1,5 +1,5 @@
 <!--<?php
-//require ("../controlador/con_session.php");
+//require ("../controlador/sesion/con_session.php");
 ?>-->
 <?php
 $a = $_GET['alerta'];

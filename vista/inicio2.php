@@ -1,5 +1,5 @@
 <?php
-require ("../controlador/con_session.php");
+require ("../controlador/sesion/con_session.php");
 ?>
 
 <!DOCTYPE HTML>
@@ -30,13 +30,9 @@ require ("../controlador/con_session.php");
 							<!-- Post -->
 								<article class="box post post-excerpt">
 									<header>
-									<?php
-											if ( $_SESSION['emp_cla']==md5('SCI2015'))
-											header('Location: actualizar_clave.php');
-											else{ }
-									?>
+
 										<h2><a href="#">Bienvenido</a></h2>
-										<td align="right"><?php echo $_SESSION['emp_nom'];?><!--<?php //include ("../controlador/con_hora_fecha.php"); ?>-->
+										<td align="right"><?php echo $_SESSION['emp_nom'];?>
 										</td>
 										<hr id="hrhoy">
 									</header>
@@ -44,8 +40,11 @@ require ("../controlador/con_session.php");
 										<span class="date"><span class="month">Inicio</span>
 									<div></div>
 								</article>
-				                   <?php
-                                 //include("../calendario/index.php");?>
+				                  <?php
+                                  require_once("../calendario/index.php");
+				                  //include ("../Calendario_Bootstrap/application/views/calendar.php");
+				                  ?>
+
                                  </div>
 					</div>
 

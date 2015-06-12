@@ -1,5 +1,5 @@
 <?php
-require ("../controlador/con_session.php");
+require ("../controlador/sesion/con_session.php");
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -47,9 +47,9 @@ require ("../controlador/con_session.php");
                   </header>
                   <div class="info">
                     <!-- TITULO EN LA PESTAÑA-->
-                    <span class="date"><span class="month">Noticias</span> <!--<span class="day">14</span><span class="year">, 2014</span></span>-->
+                    <span class="date"><span class="month">Noticias</span>
                   </div>
-                  <form id="form1" name="form1" method="POST" action="../controlador/con_registrar_noticia.php" enctype="multipart/form-data">
+                  <form id="form1" name="form1" method="POST" action="../controlador/noticia/con_registrar_noticia.php" enctype="multipart/form-data">
   <div align="center">
     <h2>Rellene el formulario para registrar los datos en el sistema</h2>
     <p>&nbsp;</p>
@@ -63,7 +63,7 @@ require ("../controlador/con_session.php");
   <tr>
     <th width="41" scope="col">&nbsp;</th>
     <td width="298" scope="col"><div align="right"><strong>Imagen:&nbsp;</strong></div></td>
-    <td width="466" scope="col"><input type="file" name="img" id="img"/></td>
+    <td width="466" scope="col"><input type="file" name="img" id="img"/> Formato: JPG / PNG</td>
     <th width="385" scope="col">&nbsp;</th>
   </tr>
     <tr>

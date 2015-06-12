@@ -1,5 +1,5 @@
 <?php
-require ("../controlador/con_session.php");
+require ("../controlador/sesion/con_session.php");
 ?>
 <!DOCTYPE HTML>
 
@@ -10,7 +10,6 @@ require ("../controlador/con_session.php");
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
-
         <script type="text/javascript" src="../fusioncharts/js/fusioncharts.js"></script>
         <script type="text/javascript" src="../fusioncharts/js/themes/fusioncharts.theme.carbon.js"></script>
 		<script src="js/jquery.min.js"></script>
@@ -32,7 +31,7 @@ require ("../controlador/con_session.php");
 									<header>
 										<h2><a href="#">Estadísticas</a></h2>
 										<hr>
-										<div align="right"><a href="../controlador/bdexcel_bitacora.php">Exportar Data</a></div>
+										<div align="right"><a href="../controlador/grafico/con_excel.php">Exportar a Excel</a></div>
 									</header>
 									<div class="info">
 										<span class="date"><span class="month">Empleados</span>
@@ -42,8 +41,7 @@ require ("../controlador/con_session.php");
 </span></div></article>
 <div>    
 <?php 
-	require ("../controlador/con_grafico.php");
-	//php echo "En estos momentos existen: ".$resultado." casos registrados en sistema";
+	require ("../controlador/grafico/con_grafico.php");
 ?>
 </div>
 
@@ -68,13 +66,12 @@ require ("../controlador/con_session.php");
            },
           "data": [
 
-            <?php empleados();?>
+            <?php empleados_perfil();?>
            ]
         }
     });
     revenueChart.render();
 })</script>
-</div>
 						</div>
 					</div>
 				<?php
